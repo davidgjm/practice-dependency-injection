@@ -4,8 +4,6 @@ import guru.springframework.services.GreetingServiceImpl;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class PropertyInjectedControllerTest {
 
     private PropertyInjectedController controller;
@@ -13,7 +11,7 @@ public class PropertyInjectedControllerTest {
     @Before
     public void setUp() throws Exception {
         controller = new PropertyInjectedController();
-        controller.service = new GreetingServiceImpl();
+        controller.greetingServiceImpl = new GreetingServiceImpl();
     }
 
     @Test

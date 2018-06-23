@@ -7,13 +7,13 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class PropertyInjectedController extends BaseGreetingController {
     @Autowired
-    public GreetingService service;
+    public GreetingService greetingServiceImpl;
 
     public PropertyInjectedController() {
     }
 
     @Override
     public String whatsup() {
-        return service.sayHello();
+        return greetingServiceImpl.sayHello();
     }
 }
