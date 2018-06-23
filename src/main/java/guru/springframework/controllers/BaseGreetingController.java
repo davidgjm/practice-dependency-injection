@@ -1,5 +1,9 @@
 package guru.springframework.controllers;
 
 abstract class BaseGreetingController {
-    public abstract String whatsup();
+    protected abstract String whatsup();
+
+    public void sayHi() {
+        System.out.println(whatsup());
+    }
 }
