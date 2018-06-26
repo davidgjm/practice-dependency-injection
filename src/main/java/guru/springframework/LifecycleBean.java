@@ -9,11 +9,9 @@ import org.springframework.core.env.Environment;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringValueResolver;
-import org.springframework.web.context.ServletContextAware;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
-import javax.servlet.ServletContext;
 
 /**
  * Bean factory implementations should support the standard bean lifecycle interfaces as far as possible. The full set of initialization methods and their standard order is:
@@ -41,7 +39,7 @@ import javax.servlet.ServletContext;
 @Component
 public class LifecycleBean implements BeanNameAware, BeanClassLoaderAware, BeanFactoryAware, EnvironmentAware,
         EmbeddedValueResolverAware,ResourceLoaderAware,ApplicationEventPublisherAware, MessageSourceAware,
-        ApplicationContextAware,ServletContextAware,
+        ApplicationContextAware,
         InitializingBean,DisposableBean {
     public LifecycleBean() {
         System.out.println(">> I'm in the bean default constructor!");
@@ -99,11 +97,11 @@ public class LifecycleBean implements BeanNameAware, BeanClassLoaderAware, BeanF
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         System.out.println("\t9. ApplicationContextAware's setApplicationContext (only applicable when running in an application context)");
     }
-
-    @Override
-    public void setServletContext(ServletContext servletContext) {
-        System.out.println("\t10. ServletContextAware's setServletContext (only applicable when running in a web application context)");
-    }
+//
+//    @Override
+//    public void setServletContext(ServletContext servletContext) {
+//        System.out.println("\t10. ServletContextAware's setServletContext (only applicable when running in a web application context)");
+//    }
 
     @Override
     public void afterPropertiesSet() throws Exception {
