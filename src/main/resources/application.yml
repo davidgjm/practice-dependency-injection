@@ -1,8 +1,12 @@
 guru:
-  username: john
-  password: secret
-  url: jdbc://localhost
   jms:
     username: JMS Username
     password: secret
     url: jms url
+
+---
+spring:
+  profiles: de
+guru:
+  jms:
+    username: JMS Username in GERMAN !!!
