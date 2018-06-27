@@ -1,0 +1,8 @@
+guru:
+  username: john
+  password: secret
+  url: jdbc://localhost
+  jms:
+    username: JMS Username
+    password: secret
+    url: jms url
